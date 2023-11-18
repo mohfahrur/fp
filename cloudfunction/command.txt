@@ -1,0 +1,12 @@
+gcloud functions deploy test-function \
+--gen2 \
+--runtime=go119 \
+--source=. \
+--region=asia-southeast2 \
+--entry-point=helloHTTP \
+--trigger-http \
+--allow-unauthenticated
+
+
+
+FUNCTION_TARGET=HelloHTTP LOCAL_ONLY=true go run cmd/main.go

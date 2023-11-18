@@ -23,8 +23,12 @@ func main() {
 		api.GET("/users/:id", getUser)
 		api.POST("/users", createUser)
 	}
-
+	router.GET("/", hello)
 	router.Run(":8080")
+}
+
+func hello(c *gin.Context) {
+	c.JSON(http.StatusOK, "hello world")
 }
 
 // Global middleware example
